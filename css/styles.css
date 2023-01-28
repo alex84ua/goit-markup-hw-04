@@ -2,6 +2,7 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   color: #2e2f42;
+  background-color: var(--main-background);
 }
 .list {
   list-style: none;
@@ -37,39 +38,69 @@ button {
   .. 
 } */
 :root {
+  --main-background: #ffffff;
+
+  --border-color: #e7e9fc;
+  --text-color: #434455;
   --brand-color: #4d5ae5;
+  --hero-background: #2e2f2e;
   --modal-btn: #404bbf;
+  --social-color: #f4f4fd;
   --background-color: #2e2f42;
   --main-header-color: #2e2f42;
   --time-and-style-of-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --accent-btn-background: #404bbf;
+  --accent-social-color: #404bbf;
+  --accent-footer-social-color: #31d0aa;
+  --customers-border-color: #8e8f99;
+  --customers-icon-color: #afb1b8;
+  --customers-accent-color: #404bbf;
+  --border-color: #e7e9fc;
+  --btn-color: #4d5ae5;
+  --btn-background: #f4f4fd;
+  --accent-btn-color: #ffffff;
+  --accent-btn-background: #404bbf;
+  --porfolio-menu-shadow-accent: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+
+  --hero-gra: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
+
+  --text-img-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+
+  --text-img-shadow-accent: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+
 /* <============HEADER==========> */
 /* .wrapper */
 .container {
   width: 1158px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 .container-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 24px;
-  padding-bottom: 24px;
+}
+.header-address-list {
+  display: flex;
+  gap: 40px;!!!!!!!!!
+}
+.header-address-item {
+  flex-basis: calc((100% - 40px) / 2);
 }
 .name-nav {
   display: flex;
-  align-items: center;
+  margin-right: auto;
 }
 .container-address {
   display: flex;
   align-items: center;
 }
 .header {
-  background: #ffffff;
-  border-bottom: 2px solid #e7e9fc;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
 }
 .menu {
   display: flex;
@@ -113,7 +144,7 @@ button {
   margin-right: 40px;
 }
 .contact-mail:hover,
-.contact-mail:active {
+.contact-mail:focus {
   color: var(--brand-color);
 }
 .contact-phone-number {
@@ -123,19 +154,16 @@ button {
   color: #434455;
 }
 .contact-phone-number:hover,
-.contact-phone-number:active {
+.contact-phone-number:focus {
   color: var(--brand-color);
 }
 /* <===============HERO=============> */
 .hero-section {
   max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-  background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url(../images/bgc/people-office\ 1.jpg);
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--hero-background);
+  background-image: var(--hero-gra), url(../images/bgc/people-office\ 1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -146,15 +174,14 @@ button {
   line-height: 1.07;
   letter-spacing: 0.02em;
   max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   margin-bottom: 48px;
   color: #ffffff;
 }
 .img {
-  width: 264px;
-  aspect-ratio: auto 264 / 260;
-  height: 260px;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 .container-hiro {
   text-align: center;
@@ -169,15 +196,18 @@ button {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  background: var(--brand-color);
+  background-color: var(--brand-color);
   text-align: center;
   border: none;
   border-radius: 4px;
+  border-color: transparent;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
   color: #ffffff;
+  cursor: pointer;
 }
 .hero-btn:hover,
-.hero-btn:active {
-  color: var(--btn-accent-color);
+.hero-btn:focus {
+  background: var(--accent-btn-background);
 }
 
 /* <==============ADVANTAGES===========> */
@@ -265,7 +295,6 @@ button {
   line-height: 1.11;
   text-align: center;
   letter-spacing: 0.02em;
-  text-transform: capitalize;
   margin-bottom: 72px;
 }
 
@@ -292,11 +321,9 @@ button {
 }
 .text-box {
   padding: 32px 16px;
-  background: #ffffff;
-  border-radius: 0px;
-  text-align: center;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-color: #e7e9fc;
+  border-top: none;
+  box-shadow: var(--pfolio-card-shadow);
 }
 .team-social-media-list {
   display: flex;
@@ -315,6 +342,11 @@ button {
   border-radius: 50%;
   transition: background-color var(--time-and-style-of-transition);
 }
+.team-social-media-link:hover,
+.team-social-media-link:focus {
+  background-color: var(--accent-social-color);
+}
+
 .team-social-media-icon {
   width: 16px;
   height: 16px;
@@ -340,21 +372,26 @@ button {
   gap: 24px;
 }
 .customers-item {
-  width: 168px;
+  flex-basis: calc((100% - 5 * 24px) / 6);
+  height: 88px;
 }
 .customers-link {
-  height: 88px;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #8e8f99;
+  border: 1px solid var(--customers-border-color);
   border-radius: 4px;
+  color: var(--customers-icon-color);
 }
+.customers-link:(:hover, :focus) {
+  background-color: var(--customers-accent-color);
+  border: var(--customers-accent-color);
+}
+
 .customers-icon {
-  width: 104px;
-  height: 56px;
-  fill: #8e8f99;
-  transition: fill var(0.4, 0, 0.2, 1);
+  fill: currentColor;
 }
 
 /* <=========FOOTER============> */
@@ -398,32 +435,37 @@ button {
 }
 .footer-social-media-list {
   display: flex;
+  justify-content: center;
   gap: 16px;
 }
+
 .footer-social-media-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.1);
-  transition: background-color var(--time-and-style-of-transition);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--social-color);
+}
+.footer-social-media-link:hover,
+.footer-soialc-link-media:focus {
+  background-color: var(--accent-footer-social-color);
 }
 .footer-social-media-item {
   width: 40px;
+  height: 40px;
 }
 .footer-social-media-icon {
-  width: 24px;
-  height: 24px;
-  fill: #f4f4fd;
+  fill: currentColor;
 }
 
 /* <==========HEADER-SECOND========> */
 
 /* <============PORTFOLIO-BATTON ======= >  */
 
-.btn-page {
-  background: #ffffff;
+.portfolio {
   padding-top: 96px;
   padding-bottom: 120px;
 }
@@ -433,38 +475,62 @@ button {
   margin-bottom: 72px;
   gap: 24px;
 }
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
 .img-page-container {
   display: flex;
-  gap: 24px;
-  row-gap: 48px;
   flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 48px;
+}
+.img-page {
+  flex-basis: calc((100% - 48px) / 3);
 }
 .text-img-box {
-  padding-top: 32px;
-  padding-bottom: 32px;
-  border: 1px solid #e7e9fc;
-  padding-left: 16px;
-  box-shadow: 0px 1px 6px rgb(46 47 66 / 8%);
-  transition: border var(--time-and-style-of-transition),
-    box-shadow var(--time-and-style-of-transition);
+  padding: 32px 16px;
+  border: 1px solid var(--border-color);
+  border-top: none;
+  box-shadow: var(--text-img-shadow);
 }
+
+.img-page:is(:hover, :focus) .text-img-box {
+  box-shadow: var(--text-img-shadow-accent);
+}
+
 .batton-page {
-  background: #f4f4fd;
-  color: var(--brand-color);
+  min-height: 48px;
+  color: var(--btn-color);
+  background-color: var(--btn-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 12px 24px;
+}
+.btn {
+  font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  border: 1px solid #e7e9fc;
-  border-radius: 4px;
-  padding: 12px 24px;
+  cursor: pointer;
 }
+
 .batton-page:hover,
 .batton-page:focus {
-  color: #ffffff;
-  background: #404bbf;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+  color: var(--accent-btn-color);
+  background-color: var(--accent-btn-background);
+  box-shadow: var(--porfolio-menu-shadow-accent);
+  border-radius: 4px;
+  border-color: transparent;
 }
 .subtitle-page {
   font-weight: 500;
